@@ -25,8 +25,8 @@ const SignIn = () => {
             <input type="checkbox" id="remember-me" />
             <label htmlFor="remember-me">Remember me</label>
           </div>
-          {/* Placeholder due to a static site */}
-          <a href="./user.html" className="sign-in-button" onClick={handleSignIn}>
+          
+          <a href="./user" className="sign-in-button" onClick={handleSignIn}>
             Sign In
           </a>
         </form>

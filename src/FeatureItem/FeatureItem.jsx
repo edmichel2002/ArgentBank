@@ -1,6 +1,4 @@
-
 import "./FeatureItem.css"
-
 
 // eslint-disable-next-line react/prop-types
 function FeatureItem ({logo,altText,title,description}) {
