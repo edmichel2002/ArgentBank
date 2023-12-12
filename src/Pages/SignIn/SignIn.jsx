@@ -2,8 +2,8 @@
 import "./SignIn.css";
 
 const SignIn = () => {
-  const handleSignIn = () => {
-    
+  const handleSignIn = (e) => {
+    e.preventDefault();
     console.log('Signing in');
   };
 
@@ -26,7 +26,7 @@ const SignIn = () => {
             <label htmlFor="remember-me">Remember me</label>
           </div>
           
-          <a href="./user" className="sign-in-button" onClick={handleSignIn}>
+          <a className="sign-in-button" onClick={handleSignIn}>
             Sign In
           </a>
         </form>

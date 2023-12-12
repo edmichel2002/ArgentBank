@@ -1,12 +1,14 @@
 // store.js
 // rootReducer.js
-import { combineReducers } from '@reduxjs/toolkit';
-import authReducer from '../authSlice';
-import profilReducer from '../profilSlice';
+import { combineReducers, createStore } from '@reduxjs/toolkit';
+import authReducer from '../Reduce/authReducer';
+import profilReducer from '../Reduce/profilReducer'
 
 const rootReducer = combineReducers({
   auth: authReducer,
-  profil: profilReducer,
+  profil: profilReducer
 });
 
-export default rootReducer;
+const store = createStore(rootReducer)
+
+export default store;

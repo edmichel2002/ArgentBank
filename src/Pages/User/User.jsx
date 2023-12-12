@@ -1,7 +1,7 @@
 //import React from 'react';
 import { useEffect } from "react";
 import { useSelector,useDispatch } from "react-redux";
-import { setUserProfile } from "../../Redux/Reduce/authSlice";
+import { setUserProfile } from "../../Redux/Reduce/authReducer";
 import Button from '../../Components/Button/Button';
 import EditButton from '../../Components/Button/Button';
 import Account from '../../Components/Account/Account';
@@ -23,7 +23,6 @@ const datas = [{
     amount: "$184.30",
     amountDescription: "Current Balance"
 }]
-
 
 
 function User (){

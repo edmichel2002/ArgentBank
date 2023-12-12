@@ -1,6 +1,6 @@
 //import React from 'react';
 import { useSelector} from 'react-redux';
-import {BrowserRouter as Router, Routes, Route,Connect} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import Home from './Pages/Home/Home';
@@ -20,7 +20,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="*" element={<Home />} />
-          <Route path="/user" element={userToken ? <User /> : <Connect to="/sign-in" />}  />
+          <Route path="/user" element={userToken ? <User /> : <SignIn /> } />
         </Routes>
         <Footer />
       </Router>
