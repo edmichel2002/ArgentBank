@@ -1,5 +1,8 @@
 //import React from 'react';
 import "./SignIn.css";
+import "../../Redux/Reduce/authReducer"
+import "../../Redux/profilReducer"
+
 
 const SignIn = () => {
   const handleSignIn = (e) => {

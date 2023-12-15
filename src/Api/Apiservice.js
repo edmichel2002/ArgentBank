@@ -2,13 +2,13 @@
 const BASE_URL = 'http://localhost:3001/api/v1'; //  l'URL de l'API
 
 // Fonction utilitaire pour effectuer les appels API avec authentification
-export const apiCallWithAuth = async (method, endpoint, token, data = null) => {
+export const apiCallWithAuth = async (method, endpoint, usertoken, data = null) => {
   const headers = {
     'Content-Type': 'application/json',
   };
 
-  if (token) {
-    headers['Authorization'] = `Bearer ${token}`;
+  if (usertoken) {
+    headers['Authorization'] = `Bearer ${usertoken}`;
   }
 
   const requestOptions = {
