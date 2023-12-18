@@ -6,6 +6,7 @@ import './main.css';
  
 import App from "./App";
  
+window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__()
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>

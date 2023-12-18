@@ -1,13 +1,18 @@
+import { useEffect } from "react";
 import {Link} from "react-router-dom";
 import Logo from "../../assets/img/argentBankLogo.webp";
 import { useSelector, useDispatch } from 'react-redux';
-import { logout } from '../Redux/Reduce/authReducer';
+import { logout } from '../../Redux/Reduce/authReducer';
 import "./Header.css"
 
 function Header () {
     const userToken = useSelector((state) => state.auth.token);
     const dispatch = useDispatch();
     const userProfile = useSelector((state) => state.profil);
+
+    useEffect(() => {
+        console.log(userToken)
+    })
 
 
     const handleLogout = () => {
@@ -32,7 +37,7 @@ function Header () {
                     <h1 className="sr-only">Argent Bank</h1>
                 </Link>
                 
-                <div className="center">
+                <div className="middle">
                 <div>
                 {userToken ? (
                     // Afficher "Log Out" si l'utilisateur est connecté ... c'est Sign Out au lieu de Log Out
