@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useSelector,useDispatch } from "react-redux";
 import { setUserProfile } from "../../Redux/Reduce/authReducer";
 import Button from '../../Components/Button/Button';
-import EditButton from '../../Components/Button/Button';
+import EditButton from '../../Components/EditButton';
 import Account from '../../Components/Account/Account';
 
 
