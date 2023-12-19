@@ -40,7 +40,7 @@ function Header () {
                 <div className="middle">
                 <div>
                 {userToken ? (
-                    // Afficher "Log Out" si l'utilisateur est connecté ... c'est Sign Out au lieu de Log Out
+                    // Afficher Sign Out si l'utilisateur est connecté ... 
                     <>
                     <Link to="/user" className="main-nav-item">
                         <i className="fa fa-user-circle"></i>
