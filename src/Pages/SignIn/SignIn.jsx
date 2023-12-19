@@ -1,4 +1,3 @@
-//import React from 'react';
 import "./SignIn.css";
 import { useNavigate } from "react-router-dom"
 import { useDispatch } from 'react-redux';
@@ -28,8 +27,6 @@ const SignIn = () => {
       console.log("Erreur: " + error)
     }
   };
-  
-
 
   return (
     <main className="main bg-dark">
