@@ -3,12 +3,22 @@ import { useNavigate } from "react-router-dom"
 import { useDispatch } from 'react-redux';
 import { apiCallWithAuth } from "../../Api/Apiservice"
 import { setToken } from '../../Redux/Reduce/authReducer';
+import { setUserProfileUser } from '../../Redux/Reduce/profilReducer';
 
 const SignIn = () => {
 
   const navigate = useNavigate()
   const dispatch = useDispatch();
-  
+
+  const getUserProfil = async (token) => {
+    try {
+      const result = await apiCallWithAuth("POST", "user/profile", token)
+      const user = result.body
+      dispatch(setUserProfileUser(user))
+    } catch (error) {
+      console.log("Erreur dans getUserProfil : " + error)
+    }
+  }
 
   const handleSignIn = async (e) => {
     console.log('Signing in');
@@ -22,6 +32,9 @@ const SignIn = () => {
       const token = result.body.token
       localStorage.setItem("token", token)
       dispatch(setToken(token))
+      if(token) {
+        await getUserProfil(token)
+      }
       navigate("/user")
     } catch (error) {
       console.log("Erreur: " + error)

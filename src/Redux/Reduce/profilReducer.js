@@ -14,9 +14,15 @@ const profilSlice = createSlice({
       state.firstName = action.payload.firstName;
       state.lastName = action.payload.lastName;
       state.userName = action.payload.userName;
+      state.createdAt = action.payload.createdAt;
+      state.updatedAt = action.payload.updatedAt;
+      state.id = action.payload.id;
     },
+    setUserName: (state, action) => {
+      state.userName = action.payload;
+    }
   },
 });
 
-export const { setUserProfileUser } = profilSlice.actions;
+export const { setUserProfileUser, setUserName } = profilSlice.actions;
 export default profilSlice.reducer;
