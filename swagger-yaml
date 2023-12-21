@@ -1,0 +1,225 @@
+swagger: "2.0"
+info:
+  title: Bank Argent API documentation
+  description: Contains all available API endpoints in this codebase
+  version: "1.0.1"
+host: localhost:3001
+basePath: /api/v1
+schemes:
+  - http
+paths:
+  /accounts/:
+    get:
+      tags:
+        - User Module
+      summary: User Account API
+      description: get user account
+      responses:
+        "200":
+          description: User accounts successfully
+          schema:
+            $ref: "#/definitions/UserAccount"
+        "400":
+          description: Invalid Fields
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+        "500":
+          description: Internal Server Error
+  /account/{accountId}/transactions/:
+    get:
+      security:
+        - Bearer: []
+      tags:
+        - User Module
+      summary: Account Transactions API
+      description: Get account transactions
+      parameters:
+        - in: path
+          name: accountId
+          description: User account ID
+          type: string
+          required: true
+      responses:
+        "200":
+          description: Account transactions successfully
+          schema:
+            $ref: "#/definitions/AccountTransactions"
+        "400":
+          description: Invalid Fields
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+        "500":
+          description: Internal Server Error
+  /accounts/{accountId}/transactions/{transactionId}:
+    get:
+      security:
+        - Bearer: []
+      tags:
+        - User Module
+      summary: Account Transactions API
+      description: Get account transactions
+      parameters:
+        - in: path
+          name: accountId
+          description: User account ID
+          type: string
+          required: true
+        - in: path
+          name: transactionId
+          description: Transaction ID
+          type: integer
+          required: true
+      responses:
+        "200":
+          description: Account transactions successfully
+          schema:
+            $ref: "#/definitions/AccountTransactions"
+        "400":
+          description: Invalid Fields
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+        "500":
+          description: Internal Server Error
+    put:
+      security:
+        - Bearer: []
+      tags:
+        - User Module
+      summary: Account Transactions API
+      description:  Get account transactions
+      parameters:
+        - in: path
+          name: accountId
+          description: User account ID
+          type: string
+          required: true
+        - in: body
+          name: body
+          description: Update user profile attributes
+          required: true
+          schema:
+            $ref: "#/definitions/UpdateTransactionDetails"
+        - in: path
+          name: transactionId
+          description: Transaction ID
+          type: integer
+          required: true
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: User profile successfully
+        "400":
+          description: Invalid Fields
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+        "500":
+          description: Internal Server Error       
+securityDefinitions:
+  Bearer:
+    type: apiKey
+    name: Authorization
+    in: header
+definitions:
+  User:
+    properties:
+      email:
+        type: string
+        description: user email
+      password:
+        type: string
+        description: user password
+      firstName:
+        type: string
+        description: user first name
+      lastName:
+        type: string
+        description: user last name
+      userName:
+        type: string
+        description: user public name
+  Login:
+    properties:
+      email:
+        type: string
+        description: user email
+      password:
+        type: string
+        description: user password
+  ApiResponse:
+    type: object
+    properties:
+      status:
+        type: integer
+      message:
+        type: string
+      body:
+        type: object
+        properties:
+          id:
+            type: string
+          email:
+            type: string
+  LoginResponse:
+    type: object
+    properties:
+      token:
+        type: string
+  UserProfile:
+    type: object
+    properties:
+      userName:
+        type: string
+  UserAccount:
+    type: object
+    properties:
+      status:
+        type: integer
+      message:
+        type: string
+      body:
+        type: object
+        properties:
+          account-title:
+            type: string
+          account-balance:
+            type: integer
+          account-description:
+            type: string
+  AccountTransactions:
+    type: object
+    properties:
+      status:
+        type: integer
+      message:
+        type: string
+      body:
+        type: object
+        properties:
+          date:
+            type: string
+          description:
+            type: string
+          amount:
+            type: string
+          type:
+            type: string
+          category:
+            type: string
+          note:
+            type: string
+  UpdateTransactionDetails:
+    type: object
+    properties:
+      category:
+        type: string
+      note:
+        type: string

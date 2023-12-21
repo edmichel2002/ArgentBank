@@ -36,7 +36,6 @@ function Header () {
                     />
                     <h1 className="sr-only">Argent Bank</h1>
                 </Link>
-                
                 <div className="middle">
                 <div>
                 {userToken ? (
@@ -68,3 +67,9 @@ function Header () {
 }
 
 export default Header;
+
+//<div className="main-nav-access">
+//<div className="main-nav-access-profil">{user.userName}</div>
+//<div>
+ // <i className="fa-solid fa-user"></i>
+ // <i className="fa-solid fa-gear"></i>

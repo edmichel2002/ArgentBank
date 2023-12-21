@@ -1,6 +1,5 @@
 // User.js
 import { useSelector } from "react-redux";
-import Button from "../../Components/Button/Button";
 import EditButton from "../../Components/EditButton/EditButton";
 import Account from "../../Components/Account/Account";
 
@@ -48,7 +47,6 @@ function User() {
             amountDescription={data.amountDescription}
           />
         ))}
-        <Button />
       </main>
     </>
   );

@@ -56,7 +56,7 @@ function EditButton() {
                             <input
                                 className="editinput"
                                 type="text"
-                                placeholder="First Name"
+                                placeholder="FirstName"
                                 defaultValue={firstName}
                             />
                         </div>
@@ -66,7 +66,7 @@ function EditButton() {
                             <input
                                 className="editinput"
                                 type="text"
-                                placeholder="Last Name"
+                                placeholder="LastName"
                                 defaultValue={lastName}
                             />
                         </div>

@@ -1,5 +1,6 @@
 //import ReactDOM from "react-dom";
 import "./Account.css"
+import Button from "../Button/Button"
 
 // eslint-disable-next-line react/prop-types
 function AccountSection ({ title, accountNumber, amount, amountDescription }) {
@@ -10,6 +11,7 @@ function AccountSection ({ title, accountNumber, amount, amountDescription }) {
         <p className="account-amount">{amount}</p>
         <p className="account-amount-description">{amountDescription}</p>
       </div>
+      <Button />
     </section>
   )
 }
