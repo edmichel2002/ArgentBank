@@ -40,7 +40,7 @@ const SignIn = () => {
       console.log("Erreur: " + error)
     }
   };
-
+  
   return (
     <main className="main bg-dark">
       <section className="sign-in-content">
@@ -49,11 +49,11 @@ const SignIn = () => {
         <form>
           <div className="input-wrapper">
             <label htmlFor="username">Username</label>
-            <input type="text" id="username" defaultValue="tony@stark.com" /> {/* penser a supprimer le defaultValue pour la soutenance */}
+            <input type="text" id="username" defaultValue="tony@stark.com" />
           </div>
           <div className="input-wrapper">
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" defaultValue="password123" /> {/* penser a supprimer le defaultValue pour la soutenance */}
+            <input type="password" id="password" defaultValue="password123" />
           </div>
           <div className="input-remember">
             <input type="checkbox" id="remember-me" />

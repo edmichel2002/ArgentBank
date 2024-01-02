@@ -17,7 +17,6 @@ function Header () {
 
     const handleLogout = () => {
         localStorage.removeItem('token');
-        // Dispatch the logout action
         dispatch(logout());
       };
 
@@ -36,7 +35,7 @@ function Header () {
                     />
                     <h1 className="sr-only">Argent Bank</h1>
                 </Link>
-                <div className="middle">
+                
                 <div>
                 {userToken ? (
                     // Afficher Sign Out si l'utilisateur est connecté ... 
@@ -58,7 +57,6 @@ function Header () {
                     </Link>                
                 )}
                 </div>
-            </div>
                
             </nav>
             
@@ -67,9 +65,3 @@ function Header () {
 }
 
 export default Header;
-
-//<div className="main-nav-access">
-//<div className="main-nav-access-profil">{user.userName}</div>
-//<div>
- // <i className="fa-solid fa-user"></i>
- // <i className="fa-solid fa-gear"></i>

@@ -58,6 +58,7 @@ function EditButton() {
                                 type="text"
                                 placeholder="FirstName"
                                 defaultValue={firstName}
+                                disabled
                             />
                         </div>
 
@@ -68,6 +69,7 @@ function EditButton() {
                                 type="text"
                                 placeholder="LastName"
                                 defaultValue={lastName}
+                                disabled
                             />
                         </div>
                         <div className="editProfilButtonContainer">
