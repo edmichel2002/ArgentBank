@@ -27,7 +27,7 @@ paths:
           description: Not Found
         "500":
           description: Internal Server Error
-  /account/{accountId}/transactions/:
+  /accounts/{accountId}/transactions/:
     get:
       security:
         - Bearer: []
